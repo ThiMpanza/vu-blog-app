@@ -3,11 +3,13 @@ from flask import Flask
 app = Flask(__name__)
 
 @app.route('/')
-@app.route('/home')
+@app.route('/home/<string:name>')
 
-def hello_world():
-    return 'Hello, World There!'
-
+def hello_world(name):
+    return 'Hello, ' + name
+#variables from urls - for dynamic urls - things have ids that keep changing
+#can have multiple variables in url,
+#make sure to pass to the routing method
 if __name__ == "__main__":
     app.run(debug=True)
 
