@@ -1,8 +1,11 @@
-from flask import Flask
+from flask import Flask, render_template
+
 
 app = Flask(__name__)
 
 @app.route('/')
+def index():
+    return render_template('index.html')
 @app.route('/home/<string:name>')
 
 def hello_world(name):
@@ -24,3 +27,4 @@ if __name__ == "__main__":
 #route is followed by the function that will run
 #getting url parameters to the code - using variables in urls
 #<data_type:variable_name>
+#templates - organise html, css to avoid clutter - where html code is - place all of it into a template file
