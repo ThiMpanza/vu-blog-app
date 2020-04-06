@@ -10,6 +10,12 @@ def hello_world(name):
 #variables from urls - for dynamic urls - things have ids that keep changing
 #can have multiple variables in url,
 #make sure to pass to the routing method
+@app.route('/onlyget', methods=['GET'])
+#by setting up a method = only read the data but can't post
+#POST
+def only_get():
+    return 'You can only get'
+
 if __name__ == "__main__":
     app.run(debug=True)
 
