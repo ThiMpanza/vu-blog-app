@@ -3,6 +3,17 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
+all_posts = [
+    {
+        'title': 'Post 1',
+        'content': '1. I love my friends'
+    },
+
+     {
+        'title': 'Post 2',
+        'content': '2. I love my VU friends'
+    }
+]
 
 @app.route('/')
 def index():
@@ -19,22 +30,12 @@ def hello_world(name):
 #POST
 def only_get():
     return 'You can only get'
+    
 @app.route('/posts')
 def posts():
     return render_template('posts.html', posts=all_posts)
 
 
-all_posts = [
-    {
-        'title': 'Post 1',
-        'content': '1. I love my friends'
-    },
-
-     {
-        'title': 'Post 2',
-        'content': '2. I love my VU friends'
-    }
-]
 
 if __name__ == "__main__":
     app.run(debug=True)
